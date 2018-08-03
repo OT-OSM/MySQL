@@ -1,0 +1,35 @@
+---
+- name: Set root Password
+  mysql_user: name=root host={{ item }} password={{ mysql_root_password }} state=present
+  with_items:
+    - "%"
+    - localhost
+
+- name: Add config file
+  template: src=my.cnf.j2 dest=/root/.my.cnf owner=root group=root mode=0600
+
+- name: Reload privilege tables
+  command: 'mysql -e "{{ item }}"'
+  with_items:
+    - FLUSH PRIVILEGES
+  changed_when: False
+
+- name: Remove anonymous users
+  command: 'mysql -ne "{{ item }}"'
+  with_items:
+    - DELETE FROM mysql.user WHERE User=''
+  changed_when: False
+
+- name: Reload privilege tables
+  command: 'mysql -ne "{{ item }}"'
+  with_items:
+    - FLUSH PRIVILEGES
+  changed_when: False
+
+- name: Restarting mysql
+  service: name=mysql state=restarted
+  when: ansible_distribution == 'Ubuntu' and (ansible_distribution_major_version == '14' or ansible_distribution_major_version == '16')
+
+- name: Restarting mysql
+  service: name=mysqld state=restarted
+  when: ansible_distribution == "CentOS" and (ansible_distribution_major_version == '6' or ansible_distribution_major_version == '7')
