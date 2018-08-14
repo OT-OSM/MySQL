@@ -1,9 +1,9 @@
 ---
 - name: Downloading rpm for mysql
-  get_url: url=http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm dest=/root/
+  get_url: url=http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm dest=/opt/
 
 - name: Installing repo
-  command: rpm -Uvh mysql-community-release-el6-5.noarch.rpm chdir=/root/ warn=no
+  command: rpm -Uvh mysql-community-release-el6-5.noarch.rpm chdir=/opt/ warn=no
   ignore_errors: yes
 
 - name: Installing mysql server
