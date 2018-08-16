@@ -3,7 +3,8 @@
   get_url: url=http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm dest=/opt/
 
 - name: Installing repo
-  command: rpm -Uvh mysql-community-release-el6-5.noarch.rpm chdir=/opt/ warn=no
+  # command: rpm -Uvh mysql-community-release-el6-5.noarch.rpm chdir=/opt/ warn=no
+  yum: name=/opt/mysql-community-release-el6-5.noarch.rpm state=present
   ignore_errors: yes
 
 - name: Installing mysql server
