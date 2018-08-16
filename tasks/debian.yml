@@ -2,9 +2,9 @@
 - name: Installing Mysql and dependencies
   apt: name={{item}} state=present update_cache=yes
   with_items:
-      - mysql-server
-      - python-mysqldb
-  notify: mysql restart
+    - mysql-server
+    - python-mysqldb
+  notify: mysql_restart
 
 - name: Starting Mysql service
   service: name=mysql state=started
