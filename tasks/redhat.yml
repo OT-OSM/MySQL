@@ -9,10 +9,10 @@
 - name: Installing mysql server
   yum: name={{item}} state=latest update_cache=yes
   with_items:
-      - mysql
-      - mysql-server
-      - MySQL-python
-      - libselinux-python
+    - mysql
+    - mysql-server
+    - MySQL-python
+    - libselinux-python
 
 - name: Enabling mysql
   command: chkconfig mysqld on
