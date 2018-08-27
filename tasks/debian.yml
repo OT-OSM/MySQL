@@ -1,0 +1,14 @@
+---
+- name: Installing Mysql and dependencies
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - mysql-server
+    - python-mysqldb
+  notify: mysql_restart
+
+- name: Starting Mysql service
+  service: name=mysql state=started
+  ignore_errors: yes
+
+- name: Mysql Secure Installation
+  include: mysql_secure_installation.yml 
