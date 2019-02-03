@@ -1,0 +1,11 @@
+---
+# tasks file for mysql-server
+- name: Installing MySQL on Debian Systems
+  include_tasks: debian.yml
+  when:
+    ansible_os_family == "Debian"
+
+- name: Installing MySQL on RedHat Systems
+  include_tasks: redhat.yml
+  when:
+    ansible_os_family == "RedHat"
