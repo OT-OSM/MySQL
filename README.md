@@ -1,7 +1,7 @@
 mysql-server
 ============
 
-An ansible role for the installation of MySQL on Ubuntu(14,16) and CemtOS(6,7).
+An ansible role for the installation of MySQL on Ubuntu(14,16,18) and CemtOS(6,7).
 
 Requirements
 ------------
