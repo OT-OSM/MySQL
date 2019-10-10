@@ -1,0 +1,9 @@
+mysql_version: 8.3
+
+mysql_root_password: "root"
+
+mysql_user_name: "opstree"
+
+mysql_user_password: "opstree"
+
+mysql_database_name: "opstree
