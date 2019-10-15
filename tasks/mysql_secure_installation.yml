@@ -25,11 +25,4 @@
   with_items:
     - FLUSH PRIVILEGES
   changed_when: False
-
-- name: Restarting mysql
-  service: name=mysql state=restarted
-  when: ansible_distribution == 'Ubuntu' and (ansible_distribution_major_version == '14' or ansible_distribution_major_version == '16' ansible_distribution_major_version == '18')
-
-- name: Restarting mysql
-  service: name=mysqld state=restarted
-  when: ansible_distribution == "CentOS" and (ansible_distribution_major_version == '6' or ansible_distribution_major_version == '7')
+  notify: mysql_restart

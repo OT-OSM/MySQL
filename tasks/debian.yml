@@ -1,14 +1,24 @@
 ---
-- name: Installing Mysql and dependencies
-  apt: name={{item}} state=present update_cache=yes
-  with_items:
-    - mysql-server
-    - python-mysqldb
-  notify: mysql_restart
+- name: Downloading Mysql package
+  get_url:
+    url: https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+    dest: /tmp/mysql-apt-config_0.8.13-1_all.deb
+    mode: '0644'
 
-- name: Starting Mysql service
-  service: name=mysql state=started
-  ignore_errors: yes
+- name: Installing mysql package
+  apt: "deb=/tmp/mysql-apt-config_0.8.13-1_all.deb"
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+
+- name: Installing mysql dependency
+  apt: 
+    name: python-mysqldb
+    update_cache: yes
+
+- name: Installing mysql-server
+  apt:
+    name: mysql-server
+  notify: mysql_restart
 
 - name: Mysql Secure Installation
   include: mysql_secure_installation.yml 
