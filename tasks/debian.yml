@@ -1,13 +1,14 @@
 ---
-#- name: Installing Mysql
-#  get_url:
-#    url: https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
-#    dest: /tmp/mysql-apt-config_0.8.13-1_all.deb
-#    mode: '0644'
- 
-- name: Installing mysql package  0.{{ mysql_version }}-1
-  apt:
-    deb: "https://https://dev.mysql.com/get/mysql-apt-config_0.{{ mysql_version }}-1_all.deb"
+- name: Downloading Mysql package
+  get_url:
+    url: https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+    dest: /tmp/mysql-apt-config_0.8.13-1_all.deb
+    mode: '0644'
+
+- name: Installing mysql package
+  apt: "deb=/tmp/mysql-apt-config_0.8.13-1_all.deb"
+  environment:
+    DEBIAN_FRONTEND: noninteractive
 
 - name: Installing mysql-server
   apt:
