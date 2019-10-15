@@ -10,10 +10,14 @@
   environment:
     DEBIAN_FRONTEND: noninteractive
 
+- name: Installing mysql dependency
+  apt: 
+    name: python-mysqldb
+    update_cache: yes
+
 - name: Installing mysql-server
   apt:
     name: mysql-server
-    update_cache: yes
   notify: mysql_restart
 
 - name: Mysql Secure Installation
