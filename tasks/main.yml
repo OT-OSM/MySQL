@@ -1,9 +1,11 @@
 ---
-# tasks file for mysql-server
-- name: Installation of MySQL on Ubuntu  
-  include: debian.yml
-  when: ansible_distribution == "Ubuntu"
+- name: Checking pre-requisities on target Machine
+  include_tasks: check-pre-requisities.yml
 
-- name: Installaiton of MySQL on CentOS
-  include: redhat.yml
-  when: ansible_distribution == "CentOS"
+- name: Including tasks for RedHat Family
+  include_tasks: redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Including tasks for Debian Family
+  include_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
