@@ -18,3 +18,15 @@
 
 - name: Including tasks to Replication Setup
   include_tasks: replication.yml
+  when: replication == true
+
+- name: Including tasks to Replication Setup
+  include_tasks: database.yml
+  when: database_creation == true
+
+- name: Including tasks to Replication Setup
+  include_tasks: users.yml
+  when: users_creation == true
+
+- name: Including tasks for Sanity
+  include_tasks: sanity-check.yml

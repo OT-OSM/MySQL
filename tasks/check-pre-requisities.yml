@@ -3,8 +3,3 @@
   fail:
     msg: "Playbook execution failed due to missing or empty required group 'mysql'"
   when: groups['mysql'] is not defined or groups['mysql'] | length == 0
-
-- name: Checking supported OS version
-  fail:
-    msg: "MySQL role execution failed because it supports only RedHat and Debian family"
-  when: ansible_os_family != 'Debian'
