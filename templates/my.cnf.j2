@@ -36,7 +36,12 @@ slow_query_log_file = {{ mysql_slow_query_log_file }}
 long_query_time = {{ mysql_slow_query_time }}
 {% endif %}
 
-{% if mysql_replication_master %}
+{% if inventory_hostname in groups['slave'] %}
+# Replication
+server-id = 2
+{% endif %}
+
+{% if inventory_hostname in groups['master'] %}
 # Replication
 server-id = {{ mysql_server_id }}
 

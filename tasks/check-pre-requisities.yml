@@ -7,4 +7,4 @@
 - name: Checking supported OS version
   fail:
     msg: "MySQL role execution failed because it supports only RedHat and Debian family"
-  when: ansible_os_family == 'RedHat' or ansible_os_family == 'Debian'
+  when: ansible_os_family != 'Debian'
