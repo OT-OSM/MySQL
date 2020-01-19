@@ -7,8 +7,6 @@ mysql_user_password: root
 
 # The default root user installed by mysql - almost always root
 mysql_root_home: /root
-mysql_root_username: root
-mysql_root_password: root
 
 # Set this to `true` to forcibly update the root password.
 mysql_root_password_update: false
@@ -115,9 +113,8 @@ mysql_users:
 # Replication settings (replication is only enabled if master/user have values).
 mysql_server_id: "1"
 mysql_max_binlog_size: "100M"
-mysql_binlog_format: "ROW"
+mysql_binlog_format: "MIXED"
 mysql_expire_logs_days: "10"
 mysql_replication_role: ''
 mysql_replication_master: ''
-# Same keys as `mysql_users` above.
-mysql_replication_user: {name: slave, password: slave}
+

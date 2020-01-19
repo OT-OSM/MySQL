@@ -14,4 +14,9 @@ No special requirement, only root access of the server is required.
 
 ## Role Variables
 
-We have categorized variables into two part i.e. **[Manadatory]** and **[Optional]**
+We have categorized variables into two part i.e. **[Manadatory]()** and **[Optional]()**
+
+|**Variable**|**Default Value**|**Possible Values**|**Description**|
+|------------|-----------------|-------------------|---------------|
+|mysql_root_username| root | *Root Username* | Name of the admin user of MySQL |
+|mysql_root_password| root | *Any Strong Password* | A strong password for MySQL root user |

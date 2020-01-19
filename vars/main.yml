@@ -10,6 +10,12 @@ mysql_config_include_dir: /etc/mysql/conf.d
 mysql_socket: /var/run/mysqld/mysqld.sock
 mysql_supports_innodb_large_prefix: true
 
+mysql_root_username: root
+mysql_root_password: root
+
+# Same keys as `mysql_users` above.
+mysql_replication_user: {name: slave, password: slave}
+
 mysql_install_packages: true
 replication: true
 users_creation: true
