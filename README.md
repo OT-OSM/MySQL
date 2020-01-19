@@ -1,50 +1,17 @@
-mysql-server
-============
+# OSM Ansible Role: MySQL
 
-An ansible role for the installation of MySQL on Ubuntu(14,16,18) and CemtOS(6,7).
+A high end ansible role to setup standalone or a cluster MySQL with best practices in terms of security and performance tunning.
 
-Requirements
-------------
+## Key Features
 
-None
+- [X] CIS compliant
+- [X] Best Practices
+- [X] Database and User Management
 
-Role Variables
---------------
+## Requirements
 
-```
-mysql_root_password: "root"
-mysql_user_name: "opstree"
-mysql_user_password: "opstree"
-mysql_database_name: "opstree"
-```
+No special requirement, only root access of the server is required.
 
-Dependencies
-------------
+## Role Variables
 
-None
-
-Example Playbook
-----------------
-
-A playbook to use the role.
-
-```
----
-  - hosts: hostgroup/host
-    become: true
-    roles: 
-      - mysql-server
-```
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-```
-Name: Anupam Yaadav
-Email: anupam.singh.yadav@opstree.com
-```
+We have categorized variables into two part i.e. **[Manadatory]** and **[Optional]**
