@@ -5,7 +5,7 @@ A high end ansible role to setup standalone or a cluster MySQL with best practic
 ## Key Features
 
 - [X] CIS compliant
-- [X] Best Practices
+- [X] Best Practices(Performance Tunning)
 - [X] Database and User Management
 
 ## Requirements
@@ -118,8 +118,11 @@ For further test results information, you can go through the [README.md](./inspe
 Here we do have some of our OpsTree blog's regarding MySQL.
 
 https://blog.opstree.com/2019/03/26/stay-away-replication-lag/
+
 https://blog.opstree.com/2019/07/23/mysql-monitoring/
+
 https://blog.opstree.com/2019/09/24/mysql-data-at-rest-encryption/
+
 https://blog.opstree.com/2018/12/11/setting-up-mysql-monitoring-with-prometheus/
 
 ## Author
