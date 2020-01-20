@@ -38,3 +38,90 @@ We have categorized variables into two part i.e. **[Manadatory]()** and **[Optio
 |mysql_log_error | `/var/log/mysql/mysql.err` | *Any Linux Path* | Log file location of MySQL errors |
 |mysql_max_binlog_size | `100M` | *Size in MB* | Maximum size of bin log files in MySQL |
 |mysql_binlog_format | `MIXED` | ROW or COLOUMN or MIXED | Binlog format of MySQL |
+
+The rest of the things are in [defaults](./defaults/main.yml)
+
+## Inventory
+
+An example inventory could be like this:-
+
+```ini
+[master]
+master_server1
+
+[slave]
+slave_server1
+
+[mysql]
+master_server1
+slave_server1
+
+[mysql_cluster:children]
+mysql
+master
+slave
+
+[mysql_cluster:vars]
+ansible_user=ubuntu
+```
+
+Leave blank `master` and `slave` if you don't want Master-Slave setup.
+
+## Example Playbook
+
+Here is an example of playbook to execute this role:-
+
+```yaml
+---
+- hosts: mysql_cluster
+  roles:
+    - role: osm_mysql
+      become: yes
+```
+
+## Usage
+
+There are multiple ways of executing the playbook according to your environment
+
+- To run complete role
+
+```shell
+ansible-playbook -i hosts site.yml
+```
+
+- To create users
+
+```shell
+ansible-playbook -i hosts site.yml --tags "create_user"
+```
+
+- To create databases
+
+```shell
+ansible-playbook -i hosts site.yml --tags "create_database"
+```
+
+## Running Test Cases for Setup and CIS Benchmarks
+
+For running the test cases, we have a seperate folder named [inspec](./inspec). Inspec (https://www.inspec.io/) should be installed if you want to run the test cases.
+
+Command which needs to be run
+
+```shell
+inspec exec . -t ssh://username@server_ip -i /path/to/keyfile
+```
+
+For further test results information, you can go through the [README.md](./inspec/README.md) of inspec profile.
+
+## References
+
+Here we do have some of our OpsTree blog's regarding MySQL.
+
+https://blog.opstree.com/2019/03/26/stay-away-replication-lag/
+https://blog.opstree.com/2019/07/23/mysql-monitoring/
+https://blog.opstree.com/2019/09/24/mysql-data-at-rest-encryption/
+https://blog.opstree.com/2018/12/11/setting-up-mysql-monitoring-with-prometheus/
+
+## Author
+
+**[Abhishek Dubey](abhishek.dubey@opstree.com)**
