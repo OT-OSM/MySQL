@@ -13,7 +13,7 @@
 
 - name: Ensure MySQL Python libraries and Packages are installed.
   apt:
-    name: ["{{ deb_mysql_python_package }}", "mysql-server", "mysql-common"]
+    name: ["{{ deb_mysql_python_package }}", "mysql-server-{{ debian_mysql_version }}", "mysql-common"]
     state: present
   register: task_result
   until: task_result is succeeded

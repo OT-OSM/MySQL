@@ -10,6 +10,7 @@ mysql_config_file: /etc/mysql/my.cnf
 mysql_config_include_dir: /etc/mysql/conf.d
 mysql_socket: /var/run/mysqld/mysqld.sock
 mysql_supports_innodb_large_prefix: true
+debian_mysql_version: 5.7
 
 mysql_root_username: root
 mysql_root_password: N0Tweak$_@123!

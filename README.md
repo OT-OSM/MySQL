@@ -38,6 +38,8 @@ We have categorized variables into two part i.e. **[Manadatory]()** and **[Optio
 |mysql_log_error | `/var/log/mysql/mysql.err` | *Any Linux Path* | Log file location of MySQL errors |
 |mysql_max_binlog_size | `100M` | *Size in MB* | Maximum size of bin log files in MySQL |
 |mysql_binlog_format | `MIXED` | ROW or COLOUMN or MIXED | Binlog format of MySQL |
+|debian_mysql_version | 5.7 | *Any MySQL Version* | Which version of MySQL you want to install on Debian System |
+|mysql_redhat_version | el7 | *Any MySQL Version* | Which version of MySQL you want to install on RedHat System |
 
 The rest of the things are in [defaults](./defaults/main.yml)
 
