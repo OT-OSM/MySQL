@@ -8,3 +8,5 @@
   with_items: "{{ mysql_databases }}"
   tags:
     - create_database
+  when:
+    - inventory_hostname not in groups['slave']

@@ -28,5 +28,8 @@
   include_tasks: users.yml
   when: users_creation == true
 
+- name: Including tasks for Security
+  include_tasks: cis-secure-configuration.yml
+
 - name: Including tasks for Sanity
   include_tasks: sanity-check.yml

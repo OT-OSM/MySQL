@@ -18,6 +18,19 @@ skip-name-resolve
 sql_mode = {{ mysql_sql_mode }}
 {% endif %}
 
+skip-grant-tables = FALSE
+log-raw = OFF
+local-infile = 0
+master-info-repository = TABLE
+plugin-load = validate_password.so
+validate-password = FORCE_PLUS_PERMANENT
+validate-password-policy = STRONG
+validate-password-special-char-count = 1
+validate-password-number-count = 1
+validate-password-mixed-case-count = 1
+validate-password-length = 14
+skip-symbolic-links = YES
+
 # Logging configuration.
 {% if mysql_log_error == 'syslog' or mysql_log == 'syslog' %}
 syslog

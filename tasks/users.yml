@@ -13,3 +13,5 @@
   no_log: true
   tags:
     - create_user
+  when:
+    - inventory_hostname not in groups['slave']

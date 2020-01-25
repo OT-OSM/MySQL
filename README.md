@@ -128,3 +128,7 @@ https://blog.opstree.com/2018/12/11/setting-up-mysql-monitoring-with-prometheus/
 ## Author
 
 **[Abhishek Dubey](abhishek.dubey@opstree.com)**
+
+## To Do
+
+- [ ] Enable SSL communication between master and slave
