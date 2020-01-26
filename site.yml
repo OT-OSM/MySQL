@@ -1,5 +1,0 @@
----
-- hosts: mysql_cluster
-  roles:
-    - role: osm_mysql
-      become: yes
