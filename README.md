@@ -21,9 +21,9 @@ We have categorized variables into two part i.e. **[Manadatory]()** and **[Optio
 |**Variable**|**Default Value**|**Possible Values**|**Description**|
 |------------|-----------------|-------------------|---------------|
 |mysql_root_username| `root` | *Root Username* | Name of the admin user of MySQL |
-|mysql_root_password| `root` | *Any Strong Password* | A strong password for MySQL root user |
+|mysql_root_password| `N0Tweak$_@123!` | *Any Strong Password* | A strong password for MySQL root user |
 |mysql_replication_user.user | `slave` | *Any Username* | Name of the slave user |
-|mysql_replication_user.password | `slave` | *Any Strong Password* | A strong password for MySQL Slave |
+|mysql_replication_user.password | `N0Tweak$_@123!` | *Any Strong Password* | A strong password for MySQL Slave |
 |mysql_install_packages | `true` | true or false | Whether you want to install MySQL packages. Set the value false if you need only configuration part |
 |replication | `true` | true or false | If you don't want to setup slave, set the value false |
 |users_creation | `true` | true or false | Whether you want to include tasks for user creation or not |
