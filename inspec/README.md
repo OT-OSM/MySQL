@@ -1,6 +1,8 @@
-## CIS Practices to be Fixed
+## CIS Results
 
 ```
+Profile: CIS baseline for MySQL (mysql-cis-baseline)
+Version: 0.1.0
 Target:  local://
 
   ✔  2.3: Do Not Reuse User Accounts (Not Scored)
@@ -54,70 +56,6 @@ Target:  local://
      ↺  A manual review is required to ensure the default or shared cryptographic material is not being used
   ✔  1.2: Use Dedicated Least Privileged Account for MySQL Daemon/Service (Scored)
      ✔  The user runnning the MySQL Daemon/Service is expected to cmp == "mysql"
-  ×  8.2: Ensure 'ssl_type' Is Set to 'ANY', 'X509', or 'SPECIFIED' for All Remote Users (Scored) (9 failed)
-     ×  The ssl_type for remote user: monitoring is expected to cmp == "ANY"
-     
-     expected: "ANY"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: monitoring is expected to cmp == "X509"
-     
-     expected: "X509"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: monitoring is expected to cmp == "SPECIFIED"
-     
-     expected: "SPECIFIED"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "ANY"
-     
-     expected: "ANY"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "X509"
-     
-     expected: "X509"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "SPECIFIED"
-     
-     expected: "SPECIFIED"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "ANY"
-     
-     expected: "ANY"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "X509"
-     
-     expected: "X509"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
-     ×  The ssl_type for remote user: slave is expected to cmp == "SPECIFIED"
-     
-     expected: "SPECIFIED"
-          got: ""
-     
-     (compared using `cmp` matcher)
-
   ✔  3.5: Ensure 'relay_log_basename' Files Have Appropriate Permissions and Ownership (Scored)
      ✔  Directory /var/lib/mysql/ip-172-31-90-2-relay-bin is expected to exist
      ✔  Directory /var/lib/mysql/ip-172-31-90-2-relay-bin owner is expected to eq "mysql"
@@ -142,26 +80,6 @@ Target:  local://
      ✔  File /etc/mysql/my.cnf content is expected to match "log-raw"
   ✔  7.5: Ensure Passwords Are Set for All MySQL Accounts (Scored)
      ✔  The MySQL users with blank passwords is expected to be empty
-  ×  3.7: Ensure SSL Key Files Have Appropriate Permissions and Ownership (Scored) (4 failed)
-     ×  Directory ["server-key.pem"] is expected to exist
-     expected Directory ["server-key.pem"] to exist
-     ×  Directory ["server-key.pem"] owner is expected to eq "mysql"
-     
-     expected: "mysql"
-          got: nil
-     
-     (compared using ==)
-
-     ×  Directory ["server-key.pem"] group is expected to eq "mysql"
-     
-     expected: "mysql"
-          got: nil
-     
-     (compared using ==)
-
-     ×  Directory ["server-key.pem"] mode is expected to be <= 256
-     expected: <= 256
-          got:    nil
   ✔  4.9: Ensure 'sql_mode' Contains 'STRICT_ALL_TABLES' (Scored)
      ✔  The sql_mode is expected to include "STRICT_ALL_TABLES"
   ✔  5.8: Ensure 'repl_slave_priv' Is Not Set to 'Y' for Non-Slave Users (Scored)
@@ -191,14 +109,6 @@ Target:  local://
      ✔  /etc/passwd with user == "mysql" shells is expected to cmp == "/bin/false"
   ✔  9.3: Ensure 'master_info_repository' Is Set to 'TABLE' (Scored)
      ✔  The master_info_repository is expected to cmp == "TABLE"
-  ×  9.2: Ensure 'MASTER_SSL_VERIFY_SERVER_CERT' Is Set to 'YES' or '1' (Scored)
-     ×  The MASTER_SSL_VERIFY_SERVER_CERT is expected to cmp == 1
-     
-     expected: 1
-          got: ""
-     
-     (compared using `cmp` matcher)
-
   ✔  3.1: Ensure 'datadir' Has Appropriate Permissions and Ownership (Scored)
      ✔  Directory /var/lib/mysql is expected to exist
      ✔  Directory /var/lib/mysql owner is expected to eq "mysql"
@@ -240,6 +150,6 @@ Target:  local://
      ✔  The mysql log files partition installed on is expected not to include "/usr"
 
 
-Profile Summary: 44 successful controls, 3 control failures, 3 controls skipped
-Test Summary: 93 successful, 14 failures, 3 skipped
+Profile Summary: 44 successful controls, 0 control failures, 3 controls skipped
+Test Summary: 93 successful, 0 failures, 3 skipped
 ```
