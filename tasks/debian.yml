@@ -1,24 +1,21 @@
 ---
-- name: Downloading Mysql package
-  get_url:
-    url: https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
-    dest: /tmp/mysql-apt-config_0.8.13-1_all.deb
-    mode: '0644'
-
-- name: Installing mysql package
-  apt: "deb=/tmp/mysql-apt-config_0.8.13-1_all.deb"
-  environment:
-    DEBIAN_FRONTEND: noninteractive
-
-- name: Installing mysql dependency
-  apt: 
-    name: python-mysqldb
-    update_cache: yes
-
-- name: Installing mysql-server
+- name: Updating repository and cache
   apt:
-    name: mysql-server
-  notify: mysql_restart
+    update_cache: yes
+  register: task_result
+  until: task_result is succeeded
+  retries: 5
+  delay: 5
 
-- name: Mysql Secure Installation
-  include: mysql_secure_installation.yml 
+- name: Install and configure MySQL python client
+  set_fact:
+    deb_mysql_python_package: "{% if 'python3' in ansible_python_interpreter|default('') %}python3-mysqldb{% else %}python-mysqldb{% endif %}"
+
+- name: Ensure MySQL Python libraries and Packages are installed.
+  apt:
+    name: ["{{ deb_mysql_python_package }}", "mysql-server-{{ debian_mysql_version }}", "mysql-common"]
+    state: present
+  register: task_result
+  until: task_result is succeeded
+  retries: 5
+  delay: 5
