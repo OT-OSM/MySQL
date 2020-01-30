@@ -1,0 +1,29 @@
+galaxy_info:
+    author: Abhishek Dubey
+    description: Install and configure MySQL with CIS best practices
+    license: GPLv3
+
+    min_ansible_version: 2.0
+
+    platforms:
+        - name: Ubuntu
+          versions:
+              - xenial
+              - precise
+              - trusty
+        - name: Debian
+          versions:
+              - jessie
+              - wheezy
+        - name: EL
+          versions:
+              - 6
+              - 7
+    galaxy_tags:
+        - opstree
+        - ot-osm
+        - mysql
+        - cis-benchmark
+        - inspec
+
+dependencies: []
