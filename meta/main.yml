@@ -22,9 +22,13 @@ galaxy_info:
               - 7
     galaxy_tags:
         - opstree
-        - ot-osm
+        - otosm
         - mysql
-        - cis-benchmark
+        - cisbenchmark
         - inspec
+        - database
+        - cis
+        - devsecops
+        - devops
 
 dependencies: []
