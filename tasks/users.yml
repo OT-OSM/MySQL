@@ -1,4 +1,3 @@
- 
 ---
 - name: Ensure MySQL users are present.
   mysql_user:
