@@ -26,7 +26,7 @@
     group: mysql
     mode: 0660
 
-- name:  Ensure 'log_bin_basename' Files Have Appropriate Permissions
+- name: Ensure 'log_bin_basename' Files Have Appropriate Permissions
   file:
     path: "/var/lib/mysql/mysql-bin"
     state: directory
