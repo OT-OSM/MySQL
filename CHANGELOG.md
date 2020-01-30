@@ -7,10 +7,13 @@ A high end ansible role to setup standalone or a cluster MySQL with best practic
 
 #### :tada: New Features
 
-- [Add] Added capability for master and slave setup for MySQL
-- [Add] Added multiple OS version support i.e.
+##### [ADD]
+- Added capability for master and slave setup for MySQL
+- Added multiple OS version support i.e.
     - RedHat
     - Debian
-- [Add] Added CIS benchmarking for MySQL
-- [Change] Changed MySQL configuration for performance tunning
-- [Add] Added Inspec test cases for CIS benchmarking
+- Added CIS benchmarking for MySQL
+- Added Inspec test cases for CIS benchmarking
+
+##### [CHANGE]
+- Changed MySQL configuration for performance tunning
