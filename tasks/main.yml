@@ -18,15 +18,15 @@
 
 - name: Including tasks to Replication Setup
   include_tasks: replication.yml
-  when: replication == true
+  when: replication
 
 - name: Including tasks to Replication Setup
   include_tasks: database.yml
-  when: database_creation == true
+  when: database_creation
 
 - name: Including tasks to Replication Setup
   include_tasks: users.yml
-  when: users_creation == true
+  when: users_creation
 
 - name: Including tasks for Security
   include_tasks: cis-secure-configuration.yml
