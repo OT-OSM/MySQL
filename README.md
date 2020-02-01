@@ -1,3 +1,7 @@
+![CiS Compliant](https://img.shields.io/badge/cis-compliant-brightgreen)
+[![Apache License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/OT-OSM/mysql)
+
 # OSM: MySQL
 
 A high end ansible role to setup standalone or a cluster MySQL with best practices in terms of security and performance tunning.
