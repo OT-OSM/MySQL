@@ -19,6 +19,6 @@ mysql_root_password: N0Tweak$_@123!
 mysql_replication_user: {name: slave, password: slaveMaster@123}
 
 mysql_install_packages: true
-replication: true
+replication: false
 users_creation: true
 database_creation: true
